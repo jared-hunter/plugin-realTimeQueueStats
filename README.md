@@ -1,5 +1,17 @@
 # plugin-realTimeQueueStats
 
+this plugin adds a sidenav item to the flex desktop for viewing a list of queues and a subset of the realtime stats available for the queue.
+
+Queue Name, Tasks Assigned, Tasks Pending, Tasks Reserved, Tasks Wrapping, Total Tasks, Total Available Workers.
+
+The data is retrieved from a Twilio Sync Map and listeners for the map are added so any changes to the map are represented on the table.
+
+All data on the realTimeStatistics (https://www.twilio.com/docs/taskrouter/api/taskqueue-statistics#taskqueue-realtime-statistics) are available within the map. The react presentation creates a table display of just some of these stats. The main purpose of this plugin is to illustrate how data can be assigned to the map and passed through to the plugin via the sync map for real time updates. Triggering of the function is performed by the flex workspace callback URI, it uses the function as a webhook so any changes to the workspace result in an update to the map. This is the main area where optimizations could be made.
+
+This plugin is for demonstration purposes only and is not recommended for production use.
+
+# Directions for use
+
 1. run npm install
 2. Add the functions in the ./src/functions folder as different twilio functions with the same name in your flex project
 3. Ensure the twiio function configuration variables for workspace and sync service id are set. Make sure to use the default sync service as thats the one made available in flex by default.
