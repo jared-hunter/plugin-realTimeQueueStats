@@ -6,7 +6,7 @@ Queue Name, Tasks Assigned, Tasks Pending, Tasks Reserved, Tasks Wrapping, Total
 
 The data is retrieved from a Twilio Sync Map and listeners for the map are added so any changes to the map are represented on the table.
 
-All data on the realTimeStatistics (https://www.twilio.com/docs/taskrouter/api/taskqueue-statistics#taskqueue-realtime-statistics) are available within the map. The react presentation creates a table display of just some of these stats. The main purpose of this plugin is to illustrate how data can be assigned to the map and passed through to the plugin via the sync map for real time updates. Triggering of the function is performed by the flex workspace callback URI, it uses the function as a webhook so any changes to the workspace result in an update to the map. This is the main area where optimizations could be made.
+All data on the realTimeStatistics (https://www.twilio.com/docs/taskrouter/api/taskqueue-statistics#taskqueue-realtime-statistics) are available within the map. The react components creates a table display of just some of these stats. The main purpose of this plugin is to illustrate how data can be assigned to the map and passed through to the plugin via the sync map for real time updates. Triggering of the function is performed by the flex workspace callback URI, it uses the function as a webhook so any changes to the workspace result in an update to the map. This is the main area where optimizations could be made.
 
 This plugin is for demonstration purposes only and is not recommended for production use.
 
@@ -22,5 +22,5 @@ This plugin is for demonstration purposes only and is not recommended for produc
 
 # Known Limitiations
 
-1.  There is an upper limit for execution time of functions as the number of queues increases so does execution time. This limits the reliable operation of this function to a workspace with no more than 80 queues.
+1.  There is an upper limit for execution time of functions of 5 seconds. As the number of queues increases in a workspace so does execution time of this function. This limits the reliable operation of this function to a workspace with no more than 80 queues.
 2.  Execution of this function triggers an itemUpdated sync event for each queue on the syncMap (which matches the # queues in the workspace). Ideally one event should trigger one update. This can be optimized in a later version.
