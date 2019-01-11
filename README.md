@@ -17,8 +17,9 @@ This plugin is for demonstration purposes only and is not recommended for produc
 3. Ensure the twiio function configuration variables for workspace and sync service id are set. Make sure to use the default sync service as thats the one made available in flex by default.
 4. Set your accountSid and serviceBaseURL in /public/appConfig.js as appropriate from values found in your flex project (dont include https://)
 5. Configure your taskRouter workspace in twilio/console. Edit the events call back url to the path of the function you just created (TaskRouter -> Workspaces -> Flex Task Assignment -> Settings -> Event Callbacks Url). e.g. https://some-host/getQueueStatistics
-6. To Start; npm start
-7. To deploy; execute 'npm run build' and copy ./build/plugin-realTimeQueueStats.js to your assests on your flex project
+6. Ensure the npm version of twilio referenced within functions -> configure -> dependencies is 3.23.2 or greater
+7. To Start; npm start
+8. To deploy; execute 'npm run build' and copy ./build/plugin-realTimeQueueStats.js to your assests on your flex project
 
 # Known Limitiations
 
